@@ -6,7 +6,6 @@ public class Problema2 {
         eqh.calcularDias();
         eqh.calcularMinutos();
         eqh.calcularSegundos();
-        eqh.toString();
         System.out.println(eqh);
     }
 }
@@ -33,16 +32,16 @@ class EquivalenteHora {
     }
 
 
-    public void setHoras(){
+    public void setHoras(int horas){
         this.horas=horas;
     }
-    public void setMinutos(){
+    public void setMinutos(int minutos){
         this.minutos=minutos;
     }
-    public void setSegundos(){
+    public void setSegundos(int segundos){
         this.segundos=segundos;
     }
-    public void setDias(){
+    public void setDias(float dias){
         this.dias=dias;
     }
 
