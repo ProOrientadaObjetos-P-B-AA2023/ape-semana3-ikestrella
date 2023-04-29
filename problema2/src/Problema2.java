@@ -2,7 +2,11 @@ import java.util.Scanner;
 
 public class Problema2 {
     public static void main(String[] args) {
-        EquivalenteHora eqh = new EquivalenteHora();
+        EquivalenteHora eqh = new EquivalenteHora(2);
+        eqh.calcularDias();
+        eqh.calcularMinutos();
+        eqh.calcularSegundos();
+        eqh.toString();
         System.out.println(eqh);
     }
 }
@@ -13,14 +17,19 @@ class EquivalenteHora {
     private int segundos;
     private float dias;
 
-    public EquivalenteHora() {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Ingrese la cantidad de horas: ");
-        horas = sc.nextInt();
+    public EquivalenteHora(int horas) {
+        this.horas=horas;
+    }
 
-        minutos = horas * 60;
-        segundos = horas * 3600;
-        dias = (float) (horas / 24.0);
+
+    public void calcularMinutos(){
+        this.minutos = this.horas * 60;
+    }
+    public void calcularSegundos(){
+        this.segundos = this.horas * 3600;
+    }
+    public void calcularDias(){
+        this.dias = (float) (this.horas / 24.0);
     }
 
 
@@ -36,20 +45,23 @@ class EquivalenteHora {
     public void setDias(){
         this.dias=dias;
     }
+
+
+
     public int getHoras() {
-        return horas;
+        return this.horas;
     }
 
     public int getMinutos() {
-        return minutos;
+        return this.minutos;
     }
 
     public int getSegundos() {
-        return segundos;
+        return this.segundos;
     }
 
     public float getDias() {
-        return dias;
+        return this.dias;
     }
 
     @Override

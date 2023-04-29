@@ -1,6 +1,8 @@
 public class Problema4 {
+
     public static void main(String[] args) {
         Celular cel= new Celular("Android",3.5,450,15,"213sad243","wqe1298j9a");
+        cel.calcularivaCostoFinal();
         System.out.println(cel);
     }
 }
@@ -17,11 +19,11 @@ class Celular{
         this.tamanioPantalla=tamanioPantalla;
         this.costoInicial=costoInicial;
         this.ivaPorcentaje=ivaPorcentaje;
-        ivaCostoFinal=(costoInicial*(ivaPorcentaje/100))+costoInicial;
         this.direccionMac=direccionMac;
         this.infoIMEI=infoIMEI;
     }
 
+    public void calcularivaCostoFinal(){this.ivaCostoFinal=(this.costoInicial*(this.ivaPorcentaje/100))+this.costoInicial;}
     public void setSistemaOperativo(String sistemaOperativo){
         this.sistemaOperativo=sistemaOperativo;
     }
@@ -67,13 +69,13 @@ class Celular{
     }
     public String toString(){
         String msj= String.format("DISPOSITIVOS ELECTRONICOS"+
-                "\nSistema Operativo: %s"+
-                "\nTamanio Pantalla: %.2f"+
-                "\nCosto Inicial: %.2f"+
-                "\nIva en Porcentaje:%.2f" +
-                "\nIva Costo Final: %.2f" +
-                "\nDireccion MAC: %s" +
-                "\nInfo IMEI: %s",
+                        "\nSistema Operativo: %s"+
+                        "\nTamanio Pantalla: %.2f"+
+                        "\nCosto Inicial: %.2f"+
+                        "\nIva en Porcentaje:%.2f" +
+                        "\nIva Costo Final: %.2f" +
+                        "\nDireccion MAC: %s" +
+                        "\nInfo IMEI: %s",
                 this.getSistemaOperativo(),this.getTamanioPantalla(),this.costoInicial, this.ivaPorcentaje, this.ivaCostoFinal,
                 this.direccionMac, this.getInfoIMEI());
 

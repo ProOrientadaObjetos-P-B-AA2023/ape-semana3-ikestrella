@@ -1,6 +1,7 @@
 public class Problema3 {
     public static void main(String[] args) {
         InstitucionEducativa educativa= new InstitucionEducativa("Schubert","Privada", 2000,40,2,1500);
+        educativa.calcularPresupuesto();
         System.out.println(educativa);
     }
 }
@@ -21,7 +22,10 @@ class InstitucionEducativa {
         this.numeroDocentes = numeroDocentes;
         this.numeroSedes = numeroSedes;
         this.gastosProyectados = gastosProyectados;
-        this.presupuesto = numeroAlum * gastosProyectados;
+    }
+
+    public void calcularPresupuesto(){
+        this.presupuesto= numeroAlum * gastosProyectados;
     }
 
     public void setNombre(String nombre){
